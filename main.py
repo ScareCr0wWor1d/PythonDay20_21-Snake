@@ -8,16 +8,14 @@ import bouffe
 
 pointage = 0
 
-def update_score(pointage):
-    pointage += 10
-    Text.write(f"Score: {pointage}", font=style, align='center')
-    my_scrn.update()
 
 def toorn_l():
-    my_snk[0].left(90)
+    segment[0].left(90)
+
 
 def toorn_r():
-    my_snk[0].right(90)
+    segment[0].right(90)
+
 
 my_scrn = t.Screen()
 my_scrn.setup(600, 600)
@@ -37,7 +35,6 @@ t.listen()
 
 t.onkeypress(my_snk.toorn_l, 'Left')
 t.onkeypress(my_snk.toorn_r, 'Right')
-
 
 
 while pasfin:
