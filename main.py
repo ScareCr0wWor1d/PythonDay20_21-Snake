@@ -46,10 +46,8 @@ while pasfin:
         score.addpts()
         my_snk.grow()
 
-    for segment in my_snk.segment:
-        if segment == my_snk.head:
-            pass
-        elif my_snk.head.distance(segment) < 10:
+    for segment in my_snk.segment[1:]:
+        if my_snk.head.distance(segment) < 10:
             pasfin = False
 
     if not pasfin:
