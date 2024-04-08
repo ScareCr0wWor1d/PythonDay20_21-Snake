@@ -51,8 +51,8 @@ while pasfin:
             pasfin = False
 
     if not pasfin:
+        score.reset()
         if messagebox.askyesno('Continue', "Voulez-vous continuer?"):
-            score.reset()
             my_snk.reset()
             pasfin = True
             time.sleep(1)
