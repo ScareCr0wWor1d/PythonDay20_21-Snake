@@ -1,5 +1,6 @@
+import time
 import turtle as t
-# from tkinter import messagebox
+from tkinter import messagebox
 from time import sleep
 
 import scoreboard
@@ -36,10 +37,9 @@ t.listen()
 t.onkeypress(my_snk.toorn_l, 'Left')
 t.onkeypress(my_snk.toorn_r, 'Right')
 
-
 while pasfin:
     my_scrn.update()
-    sleep(0.1)
+    sleep(0.09)
     pasfin = my_snk.moov_f()
     if my_snk.head.distance(manger) <= 15:
         manger.move_bouffe()
@@ -51,6 +51,10 @@ while pasfin:
             pasfin = False
 
     if not pasfin:
-        score.game_over()
+        if messagebox.askyesno('Continue', "Voulez-vous continuer?"):
+            score.reset()
+            my_snk.reset()
+            pasfin = True
+            time.sleep(1)
 
 my_scrn.exitonclick()
